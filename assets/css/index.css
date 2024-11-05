@@ -84,12 +84,25 @@ body {
   top: 0px;
   width: 100%;
   padding-bottom: 50px;
-  display: flex;
+  /* display: flex; */
+  justify-content: space-between;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.controls-listplay {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  width: 100%;
+  padding-bottom: 50px;
+  /* display: flex; */
   justify-content: space-between;
   transition: opacity 0.3s, visibility 0.3s;
 }
 @media (min-width: 840px) {
   .controls {
+    visibility: visible;
+  }
+  .controls-listplay {
     visibility: visible;
   }
   .controls.hide:hover {

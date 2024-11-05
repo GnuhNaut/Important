@@ -1122,21 +1122,28 @@ function handlePointerStart(event) {
 	activePointerCount++;
 	const btnSize = 50;
 	
-	if (event.y < btnSize) {
-		if (event.x < btnSize) {
+	if (event.x < btnSize) {
+		if (event.y < btnSize) {
 			togglePause();
 			return;
 		}
-		if (event.x > mainStage.width/2 - btnSize/2 && event.x < mainStage.width/2 + btnSize/2) {
+		if (event.y > btnSize && event.y < btnSize*2) {
 			toggleSound();
 			return;
 		}
-		if (event.x > mainStage.width - btnSize) {
+		if(!store.state.menuOpen) {
+			if (event.y > btnSize*2 && event.y < btnSize*3) {
+				toggleMenu();
+				return;
+			}
+		}
+	}
+	if(store.state.menuOpen) {
+		if (event.y < btnSize && event.x > mainStage.width - btnSize) {
 			toggleMenu();
 			return;
 		}
 	}
-	
 	if (!isRunning()) return;
 	
 	if (updateSpeedFromEvent(event)) {
