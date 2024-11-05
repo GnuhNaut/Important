@@ -445,7 +445,6 @@ store.subscribe(renderApp);
 function handleStateChange(state, prevState) {
 	const canPlaySound = canPlaySoundSelector(state);
 	const canPlaySoundPrev = canPlaySoundSelector(prevState);
-	
 	if (canPlaySound !== canPlaySoundPrev) {
 		if (canPlaySound) {
 			soundManager.resumeAll();

@@ -81,10 +81,10 @@ body {
 
 .controls {
   position: absolute;
-  top: 0;
+  top: 0px;
   width: 100%;
   padding-bottom: 50px;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   transition: opacity 0.3s, visibility 0.3s;
 }
